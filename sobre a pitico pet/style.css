@@ -61,7 +61,7 @@ nav ul li a:hover {
 }
 
 img {
-    max-height: 300px; /* Corrigido para um tamanho coerente */
+    max-height: 300px; 
     width: auto;
     display: block;
     margin: 0 auto;
