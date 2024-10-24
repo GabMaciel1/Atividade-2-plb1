@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Produtos</title>
+    <style>
+       
+        body {
+            font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    background-image: linear-gradient(to top, #FFFFFF, #9BC0FF);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+            font-family: Arial, sans-serif;
+        }
+        .carrossel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .produtos {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+        .produto {
+            min-width: 300px; 
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .produto img {
+            width: 100%; /*largura do produto */
+            height: auto; /*  proporção */
+        }
+        .navegacao {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .botao {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="carrossel">
+    <div class="produtos" id="produtos">
+        <div class="produto">
+            <img src="sobre a pitico pet\imagens\racao1.jpeg" alt="Produto 1">
+            <p>Produto 1</p>
+        </div>
+        <div class="produto">
+            <img src="sobre a pitico pet\imagens\racao2.webp" alt="Produto 2">
+            <p>Produto 2</p>
+        </div>
+        <div class="produto">
+            <img src="sobre a pitico pet\imagens\racao3.webp" alt="Produto 3">
+            <p>Produto 3</p>
+        </div>
+        <div class="produto">
+            <img src="sobre a pitico pet\imagens\racao4.jpeg" alt="Produto 4">
+            <p>Produto 4</p>
+        </div>
+        <div class="produto">
+            <img src="sobre a pitico pet\imagens\racao5.png" alt="Produto 5">
+            <p>Produto 5</p>
+        </div>
+        <div class="produto">
+            <img src="sobre a pitico pet\imagens\racao.jpg" alt="Produto 6">
+            <p>Produto 6</p>
+        </div>
+    </div>
+    <div class="navegacao">
+        <button class="botao" id="prev">Anterior</button>
+        <button class="botao" id="next">Próximo</button>
+    </div>
+</div>
+
+<script>
+    const produtos = document.getElementById('produtos');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const width = document.querySelector('.produto').clientWidth + 20; // largura do produto + margem
+        produtos.style.transform = `translateX(${-currentIndex * width}px)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < produtos.children.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+</script>
+
+</body>
+</html>
