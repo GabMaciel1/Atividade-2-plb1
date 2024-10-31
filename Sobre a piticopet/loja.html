@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Pitico Pet</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            background-image: linear-gradient(to top, #FFFFFF, #9BC0FF);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #0043cc;
+            padding: 5px 0;
+            color: #fff;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .intro {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+        .intro h1 {
+            font-size: 2em;
+            color: #0044cc;
+        }
+        .intro p {
+            font-size: 1.2em;
+            color: #555;
+        }
+        .carrossel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            max-width: 100vw;
+           
+        }
+        .produtos {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .racao {
+            width: 20%;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .racao img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .racao p {
+            margin: 10px 0;
+        }
+        .navegacao {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .botao {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: #9BC0FF;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .racao {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#produtos">Rações</a>
+    <a href="Sobre a Pitico Pet.html">Sobre Nós</a>
+    <a href="Sobre a Pitico Pet.html">Contato</a>
+</div>
+
+<section class="intro">
+    <h1>Loja Pitico Pet</h1>
+    <p> Veja nossas rações!</p>
+</section>
+
+<div class="carrossel" id="produtos">
+    <div class="produtos">
+        <div class="racao">
+            <img src="imagens/racao.jpg" alt="Ração 1">
+            <p>Ração</p>
+            <p><strong>R$ 49,90</strong></p>
+        </div>
+        <div class="racao">
+            <img src="imagens/racao2.webp" alt="Ração 2">
+            <p>Ração 2</p>
+            <p><strong>R$ 59,90</strong></p>
+        </div>
+        <div class="racao">
+            <img src="imagens/racao3.webp" alt="Ração 3">
+            <p>Ração 3</p>
+            <p><strong>R$ 69,90</strong></p>
+        </div>
+        <div class="racao">
+            <img src="imagens/racao4.jpeg" alt="Ração 4">
+            <p>Ração 4</p>
+            <p><strong>R$ 39,90</strong></p>
+        </div>
+        <div class="racao">
+            <img src="imagens/racao5.png" alt="Ração 5">
+            <p>Ração 5</p>
+            <p><strong>R$ 79,90</strong></p>
+        </div>
+        <div class="racao">
+            <img src="imagens/racao.jpg" alt="Ração 6">
+            <p>Ração 6</p>
+            <p><strong>R$ 89,90</strong></p>
+        </div>
+    </div>
+</div>
+
+<div class="carrossel" id="produtos">
+    <div class="produtos">
+        <div class="racao">
+            <img src="imagens/racao1g.jpg" alt="Ração para Gatos 1">
+            <p>Rações Para Gatos</p>
+            <p><strong>R$ 54,90</strong></p>
+        </div>
+        <div class="racao">
+            <img src="imagens/racao2g.jpg" alt="Ração para Gatos 2">
+            <p>Ração 2</p>
+            <p><strong>R$ 64,90</strong></p>
+        </div>
+        <div class="racao">
+            <img src="imagens/racao3g.jpg" alt="Ração para Gatos 3">
+            <p>Ração 3</p>
+            <p><strong>R$ 74,90</strong></p>
+        </div>
+        <div class="racao">
+            <img src="imagens/racao4g.jpg" alt="Ração para Gatos 4">
+            <p>Ração 4</p>
+            <p><strong>R$ 44,90</strong></p>
+        </div>
+        <div class="racao">
+            <img src="imagens/racao5g.jpg" alt="Ração para Gatos 5">
+            <p>Ração 5</p>
+            <p><strong>R$ 84,90</strong></p>
+        </div>
+        <div class="racao">
+            <img src="imagens/racao6g.jpg" alt="Ração para Gatos 6">
+            <p>Ração 6</p>
+            <p><strong>R$ 94,90</strong></p>
+        </div>
+    </div>
+    <div class="navegacao">
+        <button class="botao" id="prev">Anterior</button>
+        <button class="botao" id="next">Próximo</button>
+    </div>
+</div>
+
+<footer>
+    <p>Gabrielly Regis e Paulo Cesar.</p>
+    <p><a href="Sobre a Pitico Pet.html">Sobre Nós</a> | <a href="Sobre a Pitico Pet.html">Contato</a>
+</p>
+</footer>
+
+<script>
+    const produtos = document.querySelector('.produtos');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const width = document.querySelector('.racao').clientWidth + 20;
+        const maxIndex = produtos.children.length - Math.floor(window.innerWidth / width);
+        
+        produtos.style.transform = `translateX(${-currentIndex * width}px)`;
+        
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= maxIndex;
+    }
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        const width = document.querySelector('.racao').clientWidth + 20;
+        const maxIndex = produtos.children.length - Math.floor(window.innerWidth / width);
+        
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
+</script>
+
+</body>
+</html>
