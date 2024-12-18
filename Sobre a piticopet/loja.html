@@ -53,6 +53,19 @@
             display: flex;
             transition: transform 0.5s ease;
         }
+        .produtos2 {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .racao2 {
+            width: 20%;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
         .racao {
             width: 20%;
             margin: 10px;
@@ -78,7 +91,22 @@
             justify-content: space-between;
             transform: translateY(-50%);
         }
+        .navegacao2 {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
         .botao {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .botao2 {
             background-color: rgba(255, 255, 255, 0.7);
             border: none;
             cursor: pointer;
@@ -153,43 +181,47 @@
         </div>
     </div>
 </div>
-
-<div class="carrossel" id="produtos">
-    <div class="produtos">
-        <div class="racao">
+<div class="navegacao">
+    <button class="botao" id="prev">Anterior</button>
+    <button class="botao" id="next">Próximo</button>
+</div>
+<div class="carrossel2" id="produtos2">
+    <div class="produtos2">
+        <div class="racao2">
             <img src="imagens/racao1g.jpg" alt="Ração para Gatos 1">
             <p>Premium Castrados</p>
             <p><strong>R$ 54,90</strong></p>
         </div>
-        <div class="racao">
+        <div class="racao2">
             <img src="imagens/racao2g.jpg" alt="Ração para Gatos 2">
             <p>Friskies</p>
             <p><strong>R$ 64,90</strong></p>
         </div>
-        <div class="racao">
+        <div class="racao2">
             <img src="imagens/racao3g.jpg" alt="Ração para Gatos 3">
             <p>Royal Canin</p>
             <p><strong>R$ 74,90</strong></p>
         </div>
-        <div class="racao">
+        <div class="racao2">
             <img src="imagens/racao4g.jpg" alt="Ração para Gatos 4">
             <p>Gran Plus</p>
             <p><strong>R$ 44,90</strong></p>
         </div>
-        <div class="racao">
+        <div class="racao2">
             <img src="imagens/racao5g.jpg" alt="Ração para Gatos 5">
             <p>Origens</p>
             <p><strong>R$ 84,90</strong></p>
         </div>
-        <div class="racao">
+        <div class="racao2">
             <img src="imagens/racao6g.jpg" alt="Ração para Gatos 6">
             <p>Ração Filhotes</p>
             <p><strong>R$ 94,90</strong></p>
         </div>
     </div>
-    <div class="navegacao">
-        <button class="botao" id="prev">Anterior</button>
-        <button class="botao" id="next">Próximo</button>
+ 
+    <div class="navegacao2">
+        <button class="botao2" id="prev">Anterior</button>
+        <button class="botao2" id="next">Próximo</button>
     </div>
 </div>
 
@@ -214,6 +246,16 @@
         prevButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex >= maxIndex;
     }
+    
+    function updateCarousel() {
+        const width = document.querySelector('.racao2').clientWidth + 20;
+        const maxIndex = produtos.children.length - Math.floor(window.innerWidth / width);
+        
+        produtos.style.transform = `translateX(${-currentIndex * width}px)`;
+        
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= maxIndex;
+    }
 
     prevButton.addEventListener('click', () => {
         if (currentIndex > 0) {
@@ -224,6 +266,15 @@
 
     nextButton.addEventListener('click', () => {
         const width = document.querySelector('.racao').clientWidth + 20;
+        const maxIndex = produtos.children.length - Math.floor(window.innerWidth / width);
+        
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+    nextButton.addEventListener('click', () => {
+        const width = document.querySelector('.racao2').clientWidth + 20;
         const maxIndex = produtos.children.length - Math.floor(window.innerWidth / width);
         
         if (currentIndex < maxIndex) {
